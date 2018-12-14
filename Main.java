@@ -1,6 +1,6 @@
 public class Main {
 
-    public static int order1=1,order2=0,order3=1;
+    public static int order1=1,order2=0,order3=1,order4=2;
 
     public static void main(String[] args) {
 
@@ -61,30 +61,23 @@ public class Main {
         order1=1;
     }
 
-    public static void primNum(){
-        while(order1<30) {
+    public static void primNum() {
 
-            if (2==order1){
-                System.out.println(order1);
+        int dividers = 0;
+        while (order1<30) {
+            int test = 1;
+            while (test<30) {
+                if (order1 % test == 0) {
+                    dividers = dividers + 1;
+                    test = test + 1;
+                } else
+                    test = test + 1;
             }
-            if (3==order1){
-                System.out.println(order1);
+            if (dividers ==2)
+                System.out.print(order1+"\n");
+            dividers = 0;
+            order1 = order1 + 1;
             }
-            if (5==order1){
-                System.out.println(order1);
-            }
-            if (!(order1==1)) {
-                if (!(order1 % 2 == 0)) {
-                    if (!(order1 % 3 == 0)) {
-                        if (!(order1 % 5 == 0))
-                            System.out.println(order1);
-
-                    }
-                }
-            }
-            order1=order1+1;
-        }
-        order1=1;
-
+            order1=1;
     }
 }
